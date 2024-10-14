@@ -1,0 +1,34 @@
+/*Initialisation :
+
+    void *mlx_init() : Initialise MiniLibX et renvoie un pointeur sur la
+	structure de connexion à X11 ou à l'API graphique.
+
+Création de fenêtres :
+
+    void *mlx_new_window(void *mlx_ptr, int width, int height, char *title) :
+	Crée une nouvelle fenêtre d'une taille donnée (en pixels) avec un titre.
+	mlx_ptr est le pointeur obtenu avec mlx_init().
+
+Chargement et affichage d'images :
+
+    void *mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width, int *height) :
+	Charge une image XPM à partir d'un fichier et renvoie un pointeur sur l'image, ainsi que ses dimensions.
+    int mlx_put_image_to_window(void *mlx_ptr, void *win_ptr, void *img_ptr, int x, int y) : Affiche une image dans la fenêtre à la position (x, y).
+
+Création d'images en mémoire :
+
+    void *mlx_new_image(void *mlx_ptr, int width, int height) : Crée une nouvelle image en mémoire de dimensions width et height.
+    char *mlx_get_data_addr(void *img_ptr, int *bits_per_pixel, int *size_line, int *endian) : Retourne un pointeur vers
+	le tableau de pixels de l'image, permettant d'accéder directement aux pixels.
+
+Gestion des événements :
+
+    int mlx_hook(void *win_ptr, int event, int mask, int (*f)(), void *param) : Permet de définir une fonction pour gérer un événement spécifique.
+	Par exemple, pour capturer un appui sur une touche du clavier, un clic de souris, ou la fermeture d'une fenêtre.
+    int mlx_loop(void *mlx_ptr) : Lance une boucle infinie qui attend les événements utilisateur (comme des appuis de touches,
+	des mouvements de souris, etc.) et les traite.
+
+Couleurs et dessin :
+
+    int mlx_pixel_put(void *mlx_ptr, void *win_ptr, int x, int y, int color) : Dessine un pixel de couleur à la position (x, y) dans la fenêtre.
+*/
